@@ -1,13 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-import Header from './components/header/header';
-
+import Pfc from './components/pfc/pfc.jsx'
+ 
 function App() {
   return (
-    <Header />
+    <Pfc />
   );
 }
 
 export default App;
+ 
