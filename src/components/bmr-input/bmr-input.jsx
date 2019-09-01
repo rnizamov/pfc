@@ -8,10 +8,10 @@ export default class BmrInput extends React.Component {
     render() {
         return (
             <div>
-                <label id={this.props.for}>
+                <label htmlFor={this.props.for}>
                     {this.props.label} 
                     <input 
-                        for={this.props.for}
+                        id={this.props.for}
                         type={this.props.type}
                         name={this.props.name} 
                         onChange={this.props.handleChange} 

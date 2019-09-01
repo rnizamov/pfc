@@ -1,31 +1,45 @@
 import React from 'react';
 import Title from '../title/title.jsx'
 import BmrEnter from '../bmr-enter/bmr-enter.jsx';
-
+import BmrResult from '../bmr-result/bmr-result.jsx';
+import Amr from "../amr/amr.jsx";
 export default class Pfc extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            gender: null,
-            weight: null,
-            height: null,
-            age: null
-        }
+            gender: "male",
+            weight: "", 
+            height: "",
+            age: "",
+            amr: 1.2,
+         }
+
         this.handleChange = this.handleChange.bind(this);
-    }
+     }
+ 
 
     handleChange(e) {
         let name = e.target.name;
         let value = e.target.value;
-
-        this.setState({[name]:value});
+        this.setState({...this.state, [name]:value});
     }
 
     render() {
         return (
             <>
                 <Title>Расчет БЖУ</Title>  
-                <BmrEnter inputValue={this.props.inputValue} onClick={this.props.onClick}/>
+                <BmrEnter 
+                    data={this.state} 
+                    handleChange={this.handleChange}
+                />
+                <BmrResult 
+                    data={this.state}
+                    setCalories={this.setCalories}
+                />
+                <Amr 
+                    data={this.state} 
+                    handleChange={this.handleChange}
+                />
             </>
         );
     }

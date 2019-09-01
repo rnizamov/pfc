@@ -3,17 +3,22 @@ import React from 'react';
 export default class BmrSelect extends React.Component {
     constructor(props) {
         super(props);
+        this.handleChange = this.handleChange.bind(this);
     }
 
-    render() {
+    handleChange(e) {
+        this.props.handleChange(e);
+    }
+
+    render() {  
         return (
             <div>
-                <label id={this.props.for}>
+                <label htmlFor={this.props.for}>
                     {this.props.label} 
                     <select 
-                        for={this.props.for}
+                        id={this.props.for}
                         name={this.props.name} 
-                        onChange={this.props.handleChange} 
+                        onChange={this.handleChange} 
                         value={this.props.value}
                     >
                         {this.props.children}

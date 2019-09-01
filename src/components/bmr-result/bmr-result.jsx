@@ -1,5 +1,5 @@
 import React from 'react';
-
+import calories from "../calories/calories.js";
 export default class BmrResult extends React.Component {
     constructor(props) {
         super(props);
@@ -22,13 +22,15 @@ export default class BmrResult extends React.Component {
             kfAge: 4.330
         };
 
-        const {gender, weight, height, age} = this.props;
+        const {gender, weight, height, age} = this.props.data;
         const kf = gender === 'female' ? kfWoman : kfMan;
-        
+        let result = kf.kfGender + (kf.kfWeight*weight) + (kf.kfHeight*height) - (kf.kfAge*age);
+        calories.set(result);
+
         return (
             <div>
                 Ваш BMR = {kf.kfGender} + ({kf.kfWeight} * {weight}) + ({kf.kfHeight} * {height}) 0 ({kf.kfAge} * {age}) = 
-                          {kf.kfGender + (kf.kfWeight*weight) + (kf.kfHeight*height) - (kf.kfAge*age)}
+                          {result}
             </div>
         );
     }
