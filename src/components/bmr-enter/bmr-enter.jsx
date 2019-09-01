@@ -8,14 +8,16 @@ export default class BmrEnter extends React.Component {
     }
 
     render() {
+        let data = this.props.data;
+
         return (
             <div>
                 <BmrSelect 
                     for='gender'
                     name='gender'
                     label='Ваш пол'
-                    value={this.props.inputValue} 
-                    onClick={this.props.onChange}
+                    value={data.gender} 
+                    onChange={this.props.handleChange}
                 >
                     <option value='male'>Мужчина</option>
                     <option value='female'>Женщина</option>
@@ -24,22 +26,22 @@ export default class BmrEnter extends React.Component {
                     for='weight'
                     name='weight'
                     label='Ваш вес в кг' 
-                    value={this.props.inputValue} 
-                    onClick={this.props.onChange}
+                    value={data.weght} 
+                    onChange={this.props.handleChange}
                 />
                <BmrInput 
                     for='height'
                     name='height'
                     label='Ваш рост в см' 
-                    value={this.props.inputValue} 
-                    onClick={this.props.onChange}
+                    value={data.height} 
+                    onChange={this.props.handleChange}
                 />
                <BmrInput 
                     for='age'
                     name='age'
                     label='Ваш возраст в годах'
-                    value={this.props.inputValue} 
-                    onClick={this.props.onChange}
+                    value={data.age} 
+                    onChange={this.props.handleChange}
                 />
             </div>
         );

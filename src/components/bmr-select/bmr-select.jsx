@@ -13,7 +13,7 @@ export default class BmrSelect extends React.Component {
                     <select 
                         for={this.props.for}
                         name={this.props.name} 
-                        onChange={this.props.onChange} 
+                        onChange={this.props.handleChange} 
                         value={this.props.value}
                     >
                         {this.props.children}

@@ -6,10 +6,19 @@ export default class Pfc extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            weight: {
-                name: 
-            }
+            gender: null,
+            weight: null,
+            height: null,
+            age: null
         }
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e) {
+        let name = e.target.name;
+        let value = e.target.value;
+
+        this.setState({[name]:value});
     }
 
     render() {
