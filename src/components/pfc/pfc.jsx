@@ -3,6 +3,9 @@ import Title from '../title/title.jsx'
 import BmrEnter from '../bmr-enter/bmr-enter.jsx';
 import BmrResult from '../bmr-result/bmr-result.jsx';
 import Amr from "../amr/amr.jsx";
+import CaloriesResult from "../calories/calories-result.jsx";
+import CalcPfc from "../calcPfc/calcPfc.jsx";
+
 export default class Pfc extends React.Component {
     constructor(props) {
         super(props);
@@ -17,7 +20,6 @@ export default class Pfc extends React.Component {
         this.handleChange = this.handleChange.bind(this);
      }
  
-
     handleChange(e) {
         let name = e.target.name;
         let value = e.target.value;
@@ -37,9 +39,10 @@ export default class Pfc extends React.Component {
                     setCalories={this.setCalories}
                 />
                 <Amr 
-                    data={this.state} 
                     handleChange={this.handleChange}
                 />
+                <CaloriesResult />
+                <CalcPfc />
             </>
         );
     }

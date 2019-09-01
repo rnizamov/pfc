@@ -25,7 +25,7 @@ export default class BmrResult extends React.Component {
         const {gender, weight, height, age} = this.props.data;
         const kf = gender === 'female' ? kfWoman : kfMan;
         let result = kf.kfGender + (kf.kfWeight*weight) + (kf.kfHeight*height) - (kf.kfAge*age);
-        calories.set(result);
+        calories.set('bmr', result);
 
         return (
             <div>

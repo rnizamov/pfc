@@ -1,7 +1,11 @@
 let calories = {
-    calories: null,
-    set(value) {
-        this.calories = value;
+    bmr: null,
+    amr: null,
+    get result() {
+        return this.bmr * this.amr;
+    },
+    set(target, value) {
+        this[target] = value;
     }
 };
 
