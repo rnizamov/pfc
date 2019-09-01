@@ -10,7 +10,12 @@ export default class BmrInput extends React.Component {
             <div>
                 <label>
                     {this.props.name} 
-                    <input name={this.props.name} onChange={this.props.onChange} value={this.props.inputValue}/>
+                    <input 
+                        type={this.props.type}
+                        name={this.props.name} 
+                        onChange={this.props.onChange} 
+                        value={this.props.value}
+                    />
                 </label>
             </div>
         );
