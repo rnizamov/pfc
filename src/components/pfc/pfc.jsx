@@ -4,7 +4,7 @@ import BmrEnter from '../bmr-enter/bmr-enter.jsx';
 import BmrResult from '../bmr-result/bmr-result.jsx';
 import Amr from "../amr/amr.jsx";
 import CaloriesResult from "../calories/calories-result.jsx";
-import CalcPfc from "../calcPfc/calcPfc.jsx";
+import InfoCalcPfc from "../infoCalcPfc/infoCalcPfc.jsx";
 
 export default class Pfc extends React.Component {
     constructor(props) {
@@ -42,7 +42,7 @@ export default class Pfc extends React.Component {
                     handleChange={this.handleChange}
                 />
                 <CaloriesResult />
-                <CalcPfc />
+                <InfoCalcPfc />
             </>
         );
     }
