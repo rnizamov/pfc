@@ -1,7 +1,7 @@
 import React from "react";
-import BmrSelect from "../bmr-select/bmr-select.jsx";
+import Select from "../select/select.jsx";
 import Title from "../title/title.jsx";
- 
+
 export default class InfoCalcPfc extends React.Component {
     constructor(props) {
         super(props);
@@ -38,7 +38,7 @@ export default class InfoCalcPfc extends React.Component {
         return (
             <div>
                 <Title>Выберите вашу цель :</Title>
-                <BmrSelect 
+                <Select 
                     value={this.state.purpose}
                     for='calcPfc'
                     name='calcPfc'
@@ -48,11 +48,10 @@ export default class InfoCalcPfc extends React.Component {
                      <option value="losingWeight">Снизить вес;</option>
                      <option value="gainWeight">Набрать массу;</option>
                      <option value="relief">Рельеф;</option>
-                </BmrSelect>
+                </Select>
                 <ul>
                     {text[this.state.purpose].map((item)=> <li key={item}>{item}</li>)}
                 </ul>
-
             </div>
         );
     }

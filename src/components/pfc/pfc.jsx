@@ -1,7 +1,6 @@
 import React from 'react';
 import Title from '../title/title.jsx'
-import BmrEnter from '../bmr-enter/bmr-enter.jsx';
-import BmrResult from '../bmr-result/bmr-result.jsx';
+import Bmr from "../bmr/bmr.jsx";
 import Amr from "../amr/amr.jsx";
 import CaloriesResult from "../calories/calories-result.jsx";
 import InfoCalcPfc from "../infoCalcPfc/infoCalcPfc.jsx";
@@ -30,13 +29,9 @@ export default class Pfc extends React.Component {
         return (
             <>
                 <Title>Расчет БЖУ</Title>  
-                <BmrEnter 
+                <Bmr
                     data={this.state} 
                     handleChange={this.handleChange}
-                />
-                <BmrResult 
-                    data={this.state}
-                    setCalories={this.setCalories}
                 />
                 <Amr 
                     handleChange={this.handleChange}

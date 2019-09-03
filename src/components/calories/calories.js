@@ -1,4 +1,4 @@
-let calories = {
+const calories = {
     bmr: null,
     amr: null,
     get result() {

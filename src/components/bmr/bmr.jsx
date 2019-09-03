@@ -1,51 +1,73 @@
 import React from 'react';
-import BmrInput from '../bmr-input/bmr-input.jsx';
-import BmrSelect from '../bmr-select/bmr-select.jsx';
+import Input from '../input/input.jsx';
+import Select from '../select/select.jsx';
+import calories from "../calories/calories.js";
 
-export default class BmrEnter extends React.Component {
+export default class Bmr extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        const data = this.props.data;
+        const kfMan = {
+            kfGender: 88.362, 
+            kfWeight: 13.397,
+            kfHeight: 4.799,
+            kfAge: 5.677
+        };
+
+        const kfWoman = {
+            kfGender: 447.593, 
+            kfWeight: 9.247,
+            kfHeight: 3.098,
+            kfAge: 4.330
+        };
+
+        const {gender, weight, height, age} = this.props.data;
+        const kf = gender === 'female' ? kfWoman : kfMan;
+        let result = kf.kfGender + (kf.kfWeight*weight) + (kf.kfHeight*height) - (kf.kfAge*age);
+        calories.set('bmr', result);
   
         return (
             <div>
-                <BmrSelect 
+                <Select 
                     for='gender'
                     name='gender'
                     label='Ваш пол'
-                    value={data.gender} 
+                    value={gender} 
                     handleChange={this.props.handleChange}
                 >
                     <option value='male'>Мужчина</option>
                     <option value='female'>Женщина</option>
-                </BmrSelect>
-               <BmrInput 
+                </Select>
+               <Input 
                     type="number"
                     for='weight'
                     name='weight'
                     label='Ваш вес в кг' 
-                    value={data.weght} 
+                    value={weight} 
                     handleChange={this.props.handleChange}
                 />
-               <BmrInput 
+               <Input 
                     type="number"
                     for='height'
                     name='height'
                     label='Ваш рост в см' 
-                    value={data.height} 
+                    value={height} 
                     handleChange={this.props.handleChange}
                 />
-               <BmrInput 
+               <Input 
                     type="number"
                     for='age'
                     name='age'
                     label='Ваш возраст в годах'
-                    value={data.age} 
+                    value={age} 
                     handleChange={this.props.handleChange}
                 />
+                <div>
+                    Ваш BMR = {kf.kfGender} + ({kf.kfWeight} * {weight}) + ({kf.kfHeight} * {height}) 0 ({kf.kfAge} * {age}) = 
+                          {result}
+                </div>
             </div>
         );
     }
