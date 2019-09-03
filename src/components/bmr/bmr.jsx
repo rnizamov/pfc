@@ -65,14 +65,9 @@ export default class Bmr extends React.Component {
                     handleChange={this.props.handleChange}
                 />
                 <div>
-                    Ваш BMR = {kf.kfGender} + ({kf.kfWeight} * {weight}) + ({kf.kfHeight} * {height}) 0 ({kf.kfAge} * {age}) = 
-                          {result}
+                    Ваш BMR = {kf.kfGender} + ({kf.kfWeight} * {weight}) + ({kf.kfHeight} * {height}) 0 ({kf.kfAge} * {age}) = {result} ккал
                 </div>
             </div>
         );
     }
 }
-
-
-//для женщин: BMR = 447,593 + (9,247 * вес в кг) + (3,098 * рост в см) — (4,330 * возраст в годах);
-//для мужчин: BMR = 88,362 + (13,397 * вес в кг) + (4,799 * рост в см) — (5,677 * возраст в годах).

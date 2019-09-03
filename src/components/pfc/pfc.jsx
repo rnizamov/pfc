@@ -4,6 +4,7 @@ import Bmr from "../bmr/bmr.jsx";
 import Amr from "../amr/amr.jsx";
 import CaloriesResult from "../calories/calories-result.jsx";
 import InfoCalcPfc from "../infoCalcPfc/infoCalcPfc.jsx";
+import CalcPfc from "../calcPfc/calcPfc.jsx";
 
 export default class Pfc extends React.Component {
     constructor(props) {
@@ -38,6 +39,7 @@ export default class Pfc extends React.Component {
                 />
                 <CaloriesResult />
                 <InfoCalcPfc />
+                <CalcPfc />
             </>
         );
     }
