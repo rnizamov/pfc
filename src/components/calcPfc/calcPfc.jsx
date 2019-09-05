@@ -1,6 +1,7 @@
 import React from "react";
 import Input from "../input/input.jsx";
 import Title from "../title/title.jsx";
+import {ThemeContext} from "../context/themecontext.js";
 
 export default class CalcPfc extends React.Component {
     constructor(props) {
@@ -14,6 +15,8 @@ export default class CalcPfc extends React.Component {
         
         this.handleChange = this.handleChange.bind(this);
     }
+
+    static contextType = ThemeContext;
 
     handleChange(e) {
         let name = e.target.name,
@@ -41,9 +44,9 @@ export default class CalcPfc extends React.Component {
         let protein = this.calcNutrient('protein'), 
             fat = this.calcNutrient('fat'),
             carbohydrate =  this.calcNutrient('carbohydrate');       
-           
+        
         return (
-                <div>
+                <div className={this.context.theme}>
                     <Title>
                         Расчет нутриентов в граммах 
                     </Title>
