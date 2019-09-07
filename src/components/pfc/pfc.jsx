@@ -42,12 +42,11 @@ export default class Pfc extends React.Component {
     handleChange(e) {
         let name = e.target.name;
         let value = e.target.value;
-        this.setState({...this.state, [name]:value});
+        this.setState((state) => ({...state, [name]:value}));
     }
 
     render() { 
-        console.log(this.state.context)
-     
+      
         return (
             <>
                 <ThemeContext.Provider value={this.state.context}>
