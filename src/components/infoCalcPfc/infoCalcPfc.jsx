@@ -8,11 +8,11 @@ export default class InfoCalcPfc extends React.Component {
         this.state = {
             purpose: "losingWeight"
         };
-        this.handleChange = this.handleChange.bind(this);
-    }
+     }
 
-    handleChange(e) {
-        this.setState((state) => ({...state, purpose: e.target.value}));
+    handleChange = (e) => {
+        let value = e.target.value;
+        this.setState((state) => ({...state, purpose: value}));
     }
 
     render() {
